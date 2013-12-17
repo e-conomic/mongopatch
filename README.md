@@ -90,3 +90,31 @@ Available options
 - **log-db**: MongoDB connection string for the log database. When provided a version of the document is stored before and after the update.
 - **dry-run**: Do not perform any changes in the database. Changes are performed on copy of the documents and stored in the log db (if available).
 - **parallel**: Run the patch with given parallelism. It may run the patch faster.
+
+
+QA testing of patches
+---------------------
+
+Where to test patches
+* Preliminary testing of patches can be done locally
+* Final test of a patch should be done on:
+** Staging environment
+** Latest release codebase (all repos)
+** Latest production DB dump
+
+How to report results of test
+* Results of test are to be reported in Jira, in corresponding item
+
+Algorithm of testing
+* Note or create test data:
+** Counters of items to be patched (and to be NOT touched?)
+** Samples of items to be patched (and to be NOT touched?)
+* Run patch in the dry-run mode with log-db.
+* Examine results in the log-db.
+* Run patch in real mode.
+* Examine results in the log-db and target-db:
+** Are patched objects updated as required?
+** Do objects that are NOT target of patch still exist and are they not corrupted? (this can be done or partially done with an .after function in patch)
+* Examine results via the app GUI:
+** Can patched objects be used by end-user?
+** Can objects that are NOT target of patch be used by end-user?
