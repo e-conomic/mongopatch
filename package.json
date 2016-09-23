@@ -7,7 +7,7 @@
   "scripts": {
     "test": "mocha",
     "test-cli": "MONGOPATCH_TEST_OUTPUT=true mocha ./test/integration/cli --reporter min",
-    "coverage": "istanbul cover mocha -- --reporter min"
+    "coverage": "istanbul cover _mocha -- --reporter min"
   },
   "dependencies": {
     "ansi-stripper": "0.0.1",
