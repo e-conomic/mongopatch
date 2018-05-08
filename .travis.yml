@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-  - 10
   - 8
   - 6
+  - 4
 env:
   - MONGODB_VERSION="2.6.12"
   - MONGODB_VERSION="3.0.15"
