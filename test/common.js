@@ -29,9 +29,3 @@ chai.Assertion.addChainableMethod('subset', function(expected) {
 		util.format('expected %s not to contain subset %s', actualJson, expectedJson),
 		expected);
 });
-
-
-// setInterval(() =>{
-// 	console.log('--process._getActiveRequests(), process._getActiveHandles()--', process._getActiveRequests().length, process._getActiveHandles().length);
-//
-// }, 5000);
